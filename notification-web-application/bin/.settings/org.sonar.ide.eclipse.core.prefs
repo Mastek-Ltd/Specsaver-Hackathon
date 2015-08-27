@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+extraProperties=sonar.jacoco.itReportPath\=D\:\\iamworkspace\\CareID_Development\\CareIDWeb\\careid-web-application/../target/jacoco-it.exec\r\nsonar.java.coveragePlugin\=jacoco\r\nsonar.dynamicAnalysis\=reuseReports\r\nsonar.language\=java
+projectKey=uk.gov.hscic\:careid-web-application
+serverUrl=http\://localhost\:9000
+version=2

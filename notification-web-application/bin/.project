@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>careid-web-application</name>
+	<comment>NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+	<projects>
+		<project>careid-domain</project>
+		<project>CAREID_LOGGER</project>
+		<project>careid-exceptionmanager</project>
+		<project>careid-common</project>
+		<project>iam-validator</project>
+		<project>careid-oms-ui-domain</project>
+		<project>careid-ruleengine-client</project>
+		<project>careid-ruleengine-api</project>
+		<project>careid-ruleengine-domain</project>
+		<project>careid-client</project>
+		<project>careid-ui-domain</project>
+		<project>careid-auditlogger-client</project>
+		<project>careid-access-control</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.wst.common.project.facet.core.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+	</natures>
+</projectDescription>

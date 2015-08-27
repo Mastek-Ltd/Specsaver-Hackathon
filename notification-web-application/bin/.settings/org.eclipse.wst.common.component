@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="careid-web-application">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="careid-domain-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/careid-domain/careid-domain">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="careid-common-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/careid-common/careid-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="iam-validator-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/iam-validator/iam-validator">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="careid-oms-ui-domain-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/careid-oms-ui-domain/careid-oms-ui-domain">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="careid-ruleengine-client-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/careid-ruleengine-client/careid-ruleengine-client">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="careid-ruleengine-api-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/careid-ruleengine-api/careid-ruleengine-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="careid-ruleengine-domain-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/careid-ruleengine-domain/careid-ruleengine-domain">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="careid-client-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/careid-client/careid-client">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="careid-ui-domain-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/careid-ui-domain/careid-ui-domain">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CAREID_LOGGER-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/CAREID_LOGGER/CAREID_LOGGER">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="careid-auditlogger-client-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/careid-auditlogger-client/careid-auditlogger-client">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="careid-exceptionmanager-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/careid-exceptionmanager/careid-exceptionmanager">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="careid-access-control-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/careid-access-control/careid-access-control">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="urswebapp"/>
+        <property name="java-output-path" value="/careid-web-application/target/classes"/>
+        <property name="component.exclusion.patterns" value="**/*.html,**/*.css,**/*.js"/>
+    </wb-module>
+</project-modules>
