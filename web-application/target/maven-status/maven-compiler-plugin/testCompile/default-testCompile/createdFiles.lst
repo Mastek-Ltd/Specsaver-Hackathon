@@ -1,6 +1,0 @@
-uk\gov\hscic\user\login\web\domain\LoginDetailsTest.class
-uk\gov\hscic\user\login\web\controllers\LoginControllerTest.class
-uk\gov\hscic\user\login\web\LoginServiceTest.class
-uk\gov\hscic\user\login\web\exception\ExceptionUtilTest.class
-uk\gov\hscic\user\login\web\config\ApplicationConfigTest.class
-uk\gov\hscic\user\login\web\config\LoginApplicationServiceTest.class
