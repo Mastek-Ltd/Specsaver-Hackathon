@@ -1,9 +1,5 @@
 package uk.specsavers.service;
 
-import java.io.IOException;
-
-import javax.activation.FileTypeMap;
-import javax.activation.MimetypesFileTypeMap;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
