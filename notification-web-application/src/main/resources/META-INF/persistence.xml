@@ -6,7 +6,7 @@
 	<persistence-unit name="specsaversPersistentUnit"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		
+
 		<class>uk.specsavers.domain.CustomerDetails</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
