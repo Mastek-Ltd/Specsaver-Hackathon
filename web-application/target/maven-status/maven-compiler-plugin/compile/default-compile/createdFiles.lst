@@ -1,0 +1,8 @@
+uk\gov\hscic\user\login\web\mapper\config\MappingConfigurer.class
+uk\gov\hscic\user\login\web\LoginWebApplication.class
+uk\gov\hscic\user\login\web\LoginClient.class
+uk\gov\hscic\user\login\web\exception\ExceptionUtil.class
+uk\gov\hscic\user\login\web\domain\LoginDetails.class
+uk\gov\hscic\user\login\web\controllers\LoginController.class
+uk\gov\hscic\user\login\web\mapper\config\MapperFacadeFactoryBean.class
+uk\gov\hscic\user\login\web\ApplicationConfig.class
