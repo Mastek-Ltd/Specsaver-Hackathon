@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import uk.specsavers.service.RetrieveCustomerDetailsService;
-import uk.specsavers.ui.CustomerDetails;
+import uk.specsavers.valueobject.CustomerDetails;
 
 @Controller
 public class CustomerDetailsController {

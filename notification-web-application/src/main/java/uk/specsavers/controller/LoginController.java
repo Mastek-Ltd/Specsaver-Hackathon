@@ -1,6 +1,5 @@
 package uk.specsavers.controller;
 
-import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,29 +11,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import uk.specsavers.service.MailSenderService;
 import uk.specsavers.service.RetrieveCustomerDetailsService;
-import uk.specsavers.ui.CustomerDetails;
+import uk.specsavers.valueobject.CustomerDetails;
 
 @Controller
 public class LoginController {
 
 	final static Logger logger = Logger.getLogger(LoginController.class);
-
+	
 	@Autowired
-	private RetrieveCustomerDetailsService customerDetailsService;
-
-	@Autowired
-	private MailSenderService mailSenderService;
+	private RetrieveCustomerDetailsService  customerDetailsService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView initializeApplication(HttpServletRequest request,
-			HttpServletResponse httpServletResponse) throws MessagingException {
+			HttpServletResponse httpServletResponse) {
 		logger.debug("Redirecting to index page");
 
 		ModelAndView modelAndView = new ModelAndView();
-
-		mailSenderService.sendEmail();
 
 		modelAndView.setViewName("loginform");
 
@@ -42,28 +35,38 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/validateUser", method = RequestMethod.POST)
-	public ModelAndView validateUser(HttpServletRequest request,
-			HttpServletResponse httpServletResponse,
-			@RequestParam("username") String username,
-			@RequestParam("password") String password, String roleType) {
+	public ModelAndView validateUser(HttpServletRequest request,HttpServletResponse httpServletResponse,@RequestParam("username") String username,@RequestParam("password") String password,String roleType) {
 		logger.debug("Redirecting to customer details page if audiologist else show user profile");
 
 		ModelAndView modelAndView = new ModelAndView();
+		
+		CustomerDetails customerDetails=null;
 
-		if (roleType.equalsIgnoreCase("Audiologist")) {
+		if(roleType.equalsIgnoreCase("Audiologist"))
+		{
 			modelAndView.setViewName("redirect:/customerdetails");
 		}
-
-		else if (roleType.equalsIgnoreCase("Customer")) {
-			CustomerDetails customerDetails = customerDetailsService
-					.fetchCustomerDetailsById(username);
-			modelAndView.addObject("customerDtl", customerDetails);
-			modelAndView.setViewName("customerprofile");
+		
+		else if(roleType.equalsIgnoreCase("Customer"))
+		{
+			
+			try {
+				customerDetails = customerDetailsService.fetchCustomerDetailsById(username);
+				modelAndView.addObject("customerDtl",customerDetails);
+				modelAndView.setViewName("customerprofile");
+			} catch (Exception e) {
+				e.printStackTrace();
+				modelAndView.setViewName("error");
+				
+			}
+			
 		}
-
-		else {
+		
+		else 
+		{
 			modelAndView.setViewName("loginform");
 		}
+		
 
 		return modelAndView;
 	}

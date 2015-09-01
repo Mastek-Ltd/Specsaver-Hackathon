@@ -18,45 +18,45 @@ import javax.persistence.TemporalType;
 public class CustomerDetails implements Serializable {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -8120111862153132071L;
 
 	@Id
 	@Column(name = "customerid")
 	private BigDecimal customerid;
-	
-	@Column(name = "firstName")	
+
+	@Column(name = "firstName")
 	private String firstName;
-	
-	@Column(name = "lastName")	
+
+	@Column(name = "lastName")
 	private String lastName;
-	
+
 	@Column(name = "location")
 	private String location;
-	
+
 	@Column(name = "age")
 	private Integer age;
-	
+
 	@Temporal(TemporalType.DATE)
 	@Column(name = "lastHearingTestDate")
 	private Date lastHearingTestDate;
-	
+
 	@Temporal(TemporalType.DATE)
 	@Column(name = "nexttHearingTestDate")
 	private Date nextHearingTestDate;
-	
+
 	@Temporal(TemporalType.DATE)
 	@Column(name = "lastSightTestDate")
 	private Date lastSightTestDate;
-	
+
 	@Temporal(TemporalType.DATE)
 	@Column(name = "nextSightTestDate")
 	private Date nextSightTestDate;
-	
+
 	@Column(name = "contactNumber")
 	private String contactNumber;
-	
+
 	@Column(name = "reminderStatus")
 	private String reminderStatus;
 
@@ -191,7 +191,7 @@ public class CustomerDetails implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-	
+
+
+
 }

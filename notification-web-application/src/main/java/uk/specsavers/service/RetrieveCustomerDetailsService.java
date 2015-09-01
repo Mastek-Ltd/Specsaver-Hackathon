@@ -5,11 +5,12 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import uk.specsavers.dao.CustomerDAO;
-import uk.specsavers.ui.CustomerDetails;
+import uk.specsavers.valueobject.CustomerDetails;
 
 @Service
 @Transactional(rollbackFor = {Exception.class})
@@ -21,6 +22,8 @@ public class RetrieveCustomerDetailsService {
 	@Autowired
 	private SMSNotificationService notificationService;
 	
+	@Value("${notification.duration}")
+	private String noOfDaysBeforeNotification;
 	
 	public List<CustomerDetails> fetchAllCustomers()
 	{
@@ -47,7 +50,7 @@ public class RetrieveCustomerDetailsService {
 		return customerDetails;
 	}
 	
-	public CustomerDetails fetchCustomerDetailsById(String username)
+	public CustomerDetails fetchCustomerDetailsById(String username) throws  Exception
 	{
 		uk.specsavers.domain.CustomerDetails customerDetail=customerDAO.fetchCustomerById(username);
 		
@@ -90,12 +93,12 @@ public class RetrieveCustomerDetailsService {
 		{
 			long diffInSeconds=customerDetail.getNextHearingTestDate().getTime()-new Date().getTime();
 			int diffInDay=(int) (diffInSeconds / (24 * 60 * 60 * 1000));  
-			if(diffInDay<=5 && customerDetail.getReminderStatus().equals("PENDING"))
+			if(diffInDay<=Integer.valueOf(noOfDaysBeforeNotification).intValue() && customerDetail.getReminderStatus().equals("Pending"))
 			{
 				try {
-					String response=notificationService.sendSMSNotification(customerDetail.getContactNumber());
+					String response=notificationService.sendSMSNotification(customerDetail.getContactNumber(),customerDetail.getFirstName());
 					customerDetail.setAdditionalDetails(response);
-					customerDetail.setReminderStatus("SENT");
+					customerDetail.setReminderStatus("Sent");
 					customerDAO.update(customerDetail);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
